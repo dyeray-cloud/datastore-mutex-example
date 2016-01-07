@@ -1,7 +1,6 @@
-## Python Flask Skeleton for Google App Engine
+## Google Cloud Datastore Mutex Example
 
-A skeleton for building Python applications on Google App Engine with the
-[Flask micro framework](http://flask.pocoo.org).
+An simple mutex using Google Cloud Datastore. The library can be found on dbmutex.py. The rest of the code is a very simple Flask application that makes use of the mutex.
 
 See our other [Google Cloud Platform github
 repos](https://github.com/GoogleCloudPlatform) for sample applications and
@@ -14,13 +13,13 @@ See the README file for directions. You'll need python 2.7 and [pip 1.4 or later
 2. Clone this repo with
 
    ```
-   git clone https://github.com/GoogleCloudPlatform/appengine-python-flask-skeleton.git
+   git clone https://github.com/dyeray/datastore-mutex-example.git
    ```
 3. Install dependencies in the project's lib directory.
    Note: App Engine can only import libraries from inside your project directory.
 
    ```
-   cd appengine-python-flask-skeleton
+   cd datastore-mutex-example
    pip install -r requirements.txt -t lib
    ```
 4. Run this project locally from the command line:
@@ -47,17 +46,6 @@ To deploy the application:
    ```
 1. Congratulations!  Your application is now live at your-app-id.appspot.com
 
-## Next Steps
-This skeleton includes `TODO` markers to help you find basic areas you will want
-to customize.
-
-### Relational Databases and Datastore
-To add persistence to your models, use
-[NDB](https://developers.google.com/appengine/docs/python/ndb/) for
-scale.  Consider
-[CloudSQL](https://developers.google.com/appengine/docs/python/cloud-sql)
-if you need a relational database.
-
 ### Installing Libraries
 See the [Third party
 libraries](https://developers.google.com/appengine/docs/python/tools/libraries27)
@@ -74,6 +62,3 @@ See [CONTRIB.md](CONTRIB.md)
 
 ## Licensing
 See [LICENSE](LICENSE)
-
-## Author
-Logan Henriquez and Johan Euphrosine
