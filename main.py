@@ -2,15 +2,20 @@
 
 # Import the Flask Framework
 from flask import Flask
+from dbmutex import Mutex
+import time
 app = Flask(__name__)
-# Note: We don't need to call run() since our application is embedded within
-# the App Engine WSGI application server.
 
 
 @app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+    mutex = Mutex()
+    start_time = time.time()
+    mutex.wait()
+    elapsed_time = time.time() - start_time
+    time.sleep(2)
+    mutex.signal()
+    return 'I have waited for %s seconds' % elapsed_time, 200
 
 
 @app.errorhandler(404)
